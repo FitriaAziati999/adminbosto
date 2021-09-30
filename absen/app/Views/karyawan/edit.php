@@ -21,8 +21,12 @@
                 <div class="card-body ">
                   <form action="<?=site_url('karyawan/'.$karyawan->id_karyawan)?>" method="post" autocomplete="off">
                   <?= csrf_field() ?>
-                  <input type="hidden" name="_method" value="PUT">
+                  <input type="hidden" name="_method" value="PATCH">
                   <div class="row">
+                  <div class="form-group col-md-6 ">
+                          <label>No.Kartu</label>
+                          <input type="text" name="nokartu" value="<?=$karyawan->nokartu?>" class="form-control" required >
+                      </div>
                   <div class="form-group col-md-6 ">
                           <label>Nik</label>
                           <input type="text" name="nik" value="<?=$karyawan->nik?>" class="form-control" required >
@@ -37,19 +41,19 @@
                       </div>
                       <div class="form-group col-md-6 ">
                           <label>Alamat</label>
-                          <textarea name="alamat" id=""  value="<?=$karyawan->alamat?>" class="form-control"></textarea>    
+                          <input type="text" name="alamat"  value="<?=$karyawan->alamat?>" class="form-control" required >  
                       </div>
-                      <div class="form-group col-md-6 "  value="<?=$karyawan->jkk?>">
+                      <div class="form-group col-md-6 "  >
                           <label>Jenis Kelamin</label>
                           <!-- <input type="text" name="jk" class="form-control" required > -->
-                          <select name="jk" class="form-control" required>
+                          <select name="jk" value="<?=$karyawan->jk?>" class="form-control" required>
                               <option>Laki Laki</option>
                               <option>Perempuan</option>
                           </select>
                       </div>
-                      <div class="form-group col-md-6 "  value="<?=$karyawan->tgl_masuk?>">
+                      <div class="form-group col-md-6 ">
                           <label>Tanggal Masuk</label>
-                          <input type="date" name="tgl_masuk" class="form-control" required >
+                          <input type="date" name="tgl_masuk" value="<?=$karyawan->tgl_masuk?>" class="form-control" required >
                       </div>
                       <div class="form-group col-md-6 "  value="<?=$karyawan->status?>">
                           <label>Status</label>
@@ -62,6 +66,14 @@
                       <div class="form-group col-md-6 ">
                           <label>Bagian</label>
                           <input type="text" name="bagian"  value="<?=$karyawan->bagian?>" class="form-control" required >
+                      </div>
+                      <div class="form-group col-md-6 ">
+                          <label>Jabatan</label>
+                          <input type="text" name="bagian"  value="<?=$karyawan->jabatan?>" class="form-control" required >
+                      </div>
+                      <div class="form-group col-md-6 ">
+                          <label>Total Cuti</label>
+                          <input type="text" name="total_cuti"  value="<?=$karyawan->total_cuti?>" class="form-control" required >
                       </div>
                       <div>
                         <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i>simpan</button>

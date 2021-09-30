@@ -10,8 +10,16 @@
             <h1>Dashboard</h1>
         </div>
 
-        <div class="section-body">
-            Hello World
-        </div>
+        <div class="container-fluid" style="padding-top: 10%; text-align: center">
+		<h1>
+			Selamat Datang <br>
+			SISTEM ABSENSI KARYAWAN <br>
+			BERBASIS KARTU RFID
+		</h1>
+	</div>
+    <div class="footer" style="text-align: center">
+	Developed by team PKL <br>
+	<strong>Politeknik Negeri Jember</strong>
+</div>
         </section>
 <?= $this->endSection() ?>

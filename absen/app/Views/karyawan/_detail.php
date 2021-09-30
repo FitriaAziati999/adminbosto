@@ -19,6 +19,10 @@
             
                     <div class="card-body table-responsive">
                       <div class="row">
+                      <div class="form-group col-md-6">
+                              <b>No.Kartu</b>
+                              <p><?= $data['nokartu'] ?></p>
+                          </div>
                           <div class="form-group col-md-6">
                               <b>Nik </b>
                               <p><?= $data['nik'] ?></p>
@@ -50,6 +54,14 @@
                           <div class="form-group col-md-6">
                               <b>Bagian</b>
                               <p><?= $data['bagian'] ?></p>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <b>Jabatan</b>
+                              <p><?= $data['jabatan'] ?></p>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <b>Total Cuti</b>
+                              <p><?= $data['total_cuti'] ?></p>
                           </div>
                       </div>
                     </div>

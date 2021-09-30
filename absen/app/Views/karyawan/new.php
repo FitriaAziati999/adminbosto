@@ -2,6 +2,17 @@
 
 <?= $this->section('title') ?>
 <title>Tambah Data Karyawan &mdash; Karyawan</title>
+<script type="text/javascript" src="<?=base_url()?>/template/assets/jquery.min.js "></script>
+<script type="text/javascript">
+		$(document).ready(function(){
+			setInterval(function(){
+				$("#norfid").load('<?=site_url('nokartu') ?>')
+			}, 0);  //pembacaan file nokartu.php, tiap 1 detik = 1000
+		});
+	</script>
+   
+    <!-- <script type="text/javasript" src="jquery-3.2.1.slim.min.js"></script> -->
+    
 <?= $this->endsection() ?>
 
 <?= $this->section('content') ?>
@@ -22,6 +33,7 @@
                   <form action="<?=site_Url('karyawan')?>" method="post" autocomplete="off">
                   <?= csrf_field() ?>
                   <div class="row">
+                  <div class="form-group col-md-6 " id="norfid"></div>
                   <div class="form-group col-md-6 ">
                           <label>Nik</label>
                           <input type="text" name="nik" class="form-control" required autofocus>
@@ -61,6 +73,15 @@
                       <div class="form-group col-md-6 ">
                           <label>Bagian</label>
                           <input type="text" name="bagian" class="form-control" required >
+                      </div>
+                      <div class="form-group col-md-6 ">
+                          <label>Jabatan</label>
+                          <input type="text" name="jabatan" class="form-control" required >
+                      </div>
+                      <div class="form-group col-md-6 ">
+                          <label>Total Cuti</label>
+                          <input type="text" name="total_cuti" class="form-control" required >
+                          
                       </div>
                       <div>
                         <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i>simpan</button>

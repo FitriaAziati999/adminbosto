@@ -40,15 +40,31 @@ $routes->get('create-db', function(){
         echo 'Database created!';
 	}
 });
-//$routes->get('/', 'Home::index');
+$routes->get('login', 'Auth::login');
+
+// $routes->get('/', 'Home::index');
 $routes->addRedirect('/', 'home');
-$routes->presenter('karyawan');
-$routes->get('karyawan/edit/(:any)', 'Karyawan::edit/$1');
-$routes->put('karyawan/(:any)', 'Karyawan::update/$1');
+$routes->get('export/karyawan', 'karyawan::exportPDF');
+$routes->resource('karyawan');
+$routes->get('nokartu', 'nokartu::index');
+$routes->resource('absensi');
+// $routes->resource('absensi');
+// $routes->get('export/karyawan', 'karyawan::exportPDF');
+$routes->get('export/cuti', 'cuti::exportPDF');
+$routes->get('cuti/get', 'cuti::index');
+$routes->get('cuti/(:num)', 'Cuti::show/$1');
+$routes->get('cuti/(:num)/setengah_hari', 'Cuti::setengah_hari/$1');
+$routes->get('cuti/(:num)/sehari', 'Cuti::sehari/$1');
+// $routes->get('karyawan/edit/(:any)', 'Karyawan::edit/$1');
+// $routes->put('karyawan/(:any)', 'Karyawan::update/$1');
 //$routes->get('karyawan/new', 'Karyawan::create');
 //$routes->post('karyawan', 'Karyawan::store');
 // $routes->get('karyawan', 'Karyawan::index');
-$routes->get('absensi', 'Absensi::index');
+// $routes->get('absensi', 'Absensi::index');
+$routes->resource('scan');
+$routes->get('scan', 'scan::index');
+$routes->get('bacakartu', 'scan::bacakartu');
+// $routes->get('bacakartu', 'scan::ceknomor');
 $routes->get('laporan', 'Laporan::index');
 
 

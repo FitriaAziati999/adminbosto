@@ -16,6 +16,11 @@ class Karyawan extends Migration
 							'unsigned'       => true,
 							'auto_increment' => true,
 					],
+					'nokartu'          => [
+						'type'       => 'VARCHAR',
+						'constraint' => '20',
+							
+				],
 					'nik'          => [
 						'type'           => 'INT',
 						'constraint'     => 16,
